@@ -378,12 +378,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 487008308}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.71, y: 1.17, z: 0}
+  m_LocalPosition: {x: -4.3102, y: -0.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1024529519}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &487008311
 BoxCollider2D:
@@ -939,7 +939,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4534750186869510, guid: f20bdf9fc4052fb4c8bc5b4affdc0013, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f20bdf9fc4052fb4c8bc5b4affdc0013, type: 2}
@@ -1161,6 +1161,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waitToRespawn: 0
   player: {fileID: 0}
+  deathSplosion: {fileID: 1591071430355080, guid: b97d63161b9992b43a68c80f4aedcb6d,
+    type: 2}
 --- !u!4 &2091797496
 Transform:
   m_ObjectHideFlags: 0
