@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
 	public float groundCheckRadius;
 	public LayerMask whatIsGround;
 	public bool isGrounded;
+	public Vector3 respawnPosition;
 
 	private Rigidbody2D rigidBody;
 	private Animator animator;
@@ -20,6 +21,8 @@ public class PlayerController : MonoBehaviour
 	{
 		this.rigidBody = GetComponent<Rigidbody2D> ();
 		this.animator = GetComponent<Animator> ();
+
+		respawnPosition = transform.position;
 	}
 	
 	// Update is called once per frame
@@ -48,7 +51,13 @@ public class PlayerController : MonoBehaviour
 	void OnTriggerEnter2D (Collider2D other)
 	{
 		if (other.tag == "KillPlane") {
-			gameObject.SetActive(false);
+			// gameObject.SetActive (false);
+
+			transform.position = respawnPosition;
+		}
+
+		if (other.tag == "Checkpoint") {
+			respawnPosition = other.transform.position;
 		}
 	}
 }
