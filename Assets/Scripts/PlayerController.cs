@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
 	public LayerMask whatIsGround;
 	public bool isGrounded;
 	public Vector3 respawnPosition;
+	public LevelManager levelManager;
 
 	private Rigidbody2D rigidBody;
 	private Animator animator;
@@ -23,6 +24,7 @@ public class PlayerController : MonoBehaviour
 		this.animator = GetComponent<Animator> ();
 
 		respawnPosition = transform.position;
+		levelManager = FindObjectOfType<LevelManager>();
 	}
 	
 	// Update is called once per frame
@@ -52,8 +54,8 @@ public class PlayerController : MonoBehaviour
 	{
 		if (other.tag == "KillPlane") {
 			// gameObject.SetActive (false);
-
-			transform.position = respawnPosition;
+			// transform.position = respawnPosition;
+			levelManager.Respawn();
 		}
 
 		if (other.tag == "Checkpoint") {
