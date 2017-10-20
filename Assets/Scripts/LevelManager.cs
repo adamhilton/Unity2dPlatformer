@@ -7,6 +7,7 @@ public class LevelManager : MonoBehaviour {
 	public float waitToRespawn;
 	public PlayerController player;
 	public GameObject deathSplosion;
+	public int coinCount;
 
 	// Use this for initialization
 	void Start () {
@@ -33,5 +34,10 @@ public class LevelManager : MonoBehaviour {
 
 		player.transform.position = player.respawnPosition;
 		player.gameObject.SetActive(true);
+	}
+
+	public void AddCoins (int coinsToAdd)
+	{
+		coinCount += coinsToAdd;
 	}
 }
