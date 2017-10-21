@@ -91,27 +91,28 @@ public class PlayerController : MonoBehaviour
 
 	void OnTriggerEnter2D (Collider2D other)
 	{
-		if (other.tag == "KillPlane") {
+		if (other.CompareTag("KillPlane")) {
+		Debug.Log("Kill plane kil...");
 			// gameObject.SetActive (false);
 			// transform.position = respawnPosition;
 			levelManager.Respawn();
 		}
 
-		if (other.tag == "Checkpoint") {
+		if (other.CompareTag("Checkpoint")) {
 			respawnPosition = other.transform.position;
 		}
 	}
 
 	void OnCollisionEnter2D (Collision2D other)
 	{
-		if (other.gameObject.tag == "MovingPlatform") {
+		if (other.gameObject.CompareTag("MovingPlatform")) {
 			transform.parent = other.transform;
 		}
 	}
 
 	void OnCollisionExit2D (Collision2D other)
 	{
-		if (other.gameObject.tag == "MovingPlatform") {
+		if (other.gameObject.CompareTag("MovingPlatform")) {
 			transform.parent = null;
 		}
 	}
