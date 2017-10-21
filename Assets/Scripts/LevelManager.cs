@@ -20,12 +20,14 @@ public class LevelManager : MonoBehaviour {
 	public int healthCount;
 
 	private bool respawning;
+	private ResetOnRespawn[] objectsToReset;
 
 	// Use this for initialization
 	void Start () {
 		player = FindObjectOfType<PlayerController>();
 		UpdateCoinCount();
 		healthCount = maxHealth;
+		objectsToReset = FindObjectsOfType<ResetOnRespawn>();
 	}
 	
 	// Update is called once per frame
@@ -44,19 +46,27 @@ public class LevelManager : MonoBehaviour {
 
 	public IEnumerator RespawnCo ()
 	{
-		player.gameObject.SetActive(false);
+		player.gameObject.SetActive (false);
 
-		Instantiate(deathSplosion, player.transform.position, player.transform.rotation);
+		Instantiate (deathSplosion, player.transform.position, player.transform.rotation);
 
-		yield return new WaitForSeconds(waitToRespawn);
+		yield return new WaitForSeconds (waitToRespawn);
 
 		healthCount = maxHealth;
+		respawning = false;
+		UpdateHeartMeter ();
+
+		coinCount = 0;
+		UpdateCoinCount();
 
 		player.transform.position = player.respawnPosition;
-		player.gameObject.SetActive(true);
-		UpdateHeartMeter();
+		player.gameObject.SetActive (true);
 
-		respawning = false;
+		for (int i = 0; i < objectsToReset.Length; i++) {
+			objectsToReset[i].gameObject.SetActive(true);
+			objectsToReset[i].ResetObject();
+		}
+
 	}
 
 	public void AddCoins (int coinsToAdd)

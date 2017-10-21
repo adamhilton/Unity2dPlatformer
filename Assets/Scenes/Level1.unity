@@ -576,6 +576,7 @@ GameObject:
   - component: {fileID: 423908262}
   - component: {fileID: 423908265}
   - component: {fileID: 423908266}
+  - component: {fileID: 423908267}
   m_Layer: 0
   m_Name: Green Wiggle
   m_TagString: Enemy
@@ -754,6 +755,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageToGive: 1
+--- !u!114 &423908267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 423908258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74d4ebf01825a6949b20ecbea95826db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &450500975
 Prefab:
   m_ObjectHideFlags: 0
@@ -871,7 +883,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 487008308}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 31.1, y: 2.35, z: 0}
+  m_LocalPosition: {x: 10.04, y: 2.2791, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1024529519}
@@ -1249,6 +1261,7 @@ GameObject:
   - component: {fileID: 1120408913}
   - component: {fileID: 1120408914}
   - component: {fileID: 1120408915}
+  - component: {fileID: 1120408916}
   m_Layer: 0
   m_Name: Spider
   m_TagString: Enemy
@@ -1424,6 +1437,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageToGive: 1
+--- !u!114 &1120408916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1120408907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74d4ebf01825a6949b20ecbea95826db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1156355678
 Prefab:
   m_ObjectHideFlags: 0
@@ -1664,7 +1688,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1339303190}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 30.9, y: 1.0889645, z: -10}
+  m_LocalPosition: {x: 13.35, y: 1.0889645, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1933027364}

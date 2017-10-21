@@ -22,7 +22,7 @@ public class StompEnemy : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D other)
 	{
 		if (other.CompareTag ("Enemy")) {
-			Destroy(other.gameObject);
+			other.gameObject.SetActive(false);
 
 			Instantiate(deathSplosion, other.transform.position, other.transform.rotation);
 

@@ -30,8 +30,12 @@ public class SpiderController : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D other)
 	{
 		if(other.CompareTag("KillPlane")) {
-			Destroy(gameObject);
+			gameObject.SetActive(false);
 		}
 	}
 
+	void OnEnable ()
+	{
+		canMove = false;
+	}
 }

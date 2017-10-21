@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212159779682313754}
   - component: {fileID: 95009829440435562}
   - component: {fileID: 58312226922614080}
+  - component: {fileID: 114542929403147252}
   m_Layer: 0
   m_Name: SpinSaw
   m_TagString: Untagged
@@ -74,6 +75,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114542929403147252
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1118287237225076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74d4ebf01825a6949b20ecbea95826db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212159779682313754
 SpriteRenderer:
   m_ObjectHideFlags: 1
