@@ -24,6 +24,8 @@ public class LevelManager : MonoBehaviour {
 	public int currentLives;
 	public Text livesText;
 	public GameObject gameOverScreen;
+	public AudioSource levelMusic;
+	public AudioSource gameOverMusic;
 
 	private bool respawning;
 	private ResetOnRespawn[] objectsToReset;
@@ -68,6 +70,8 @@ public class LevelManager : MonoBehaviour {
 		} else {
 			player.gameObject.SetActive(false);
 			gameOverScreen.SetActive(true);
+			levelMusic.Stop();
+			gameOverMusic.Play();
 		}
 	}
 
