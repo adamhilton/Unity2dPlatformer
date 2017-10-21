@@ -92,9 +92,6 @@ public class PlayerController : MonoBehaviour
 	void OnTriggerEnter2D (Collider2D other)
 	{
 		if (other.CompareTag("KillPlane")) {
-		Debug.Log("Kill plane kil...");
-			// gameObject.SetActive (false);
-			// transform.position = respawnPosition;
 			levelManager.Respawn();
 		}
 
