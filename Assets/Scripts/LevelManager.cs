@@ -22,6 +22,7 @@ public class LevelManager : MonoBehaviour {
 	public int startingLives;
 	public int currentLives;
 	public Text livesText;
+	public GameObject gameOverScreen;
 
 	private bool respawning;
 	private ResetOnRespawn[] objectsToReset;
@@ -58,6 +59,7 @@ public class LevelManager : MonoBehaviour {
 			StartCoroutine ("RespawnCo");
 		} else {
 			player.gameObject.SetActive(false);
+			gameOverScreen.SetActive(true);
 		}
 	}
 
