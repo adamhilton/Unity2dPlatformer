@@ -18,6 +18,7 @@ public class LevelManager : MonoBehaviour {
 	public Sprite heartEmpty;
 	public int maxHealth;
 	public int healthCount;
+	public bool invincible;
 
 	private bool respawning;
 	private ResetOnRespawn[] objectsToReset;
@@ -78,8 +79,12 @@ public class LevelManager : MonoBehaviour {
 
 	public void HurtPlayer (int damageToTake)
 	{
-		healthCount -= damageToTake;
-		UpdateHeartMeter();
+		if (!invincible) {
+			healthCount -= damageToTake;
+			UpdateHeartMeter ();
+
+			player.Knockback ();
+		}
 	}
 
 	public void UpdateHeartMeter ()

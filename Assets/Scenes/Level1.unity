@@ -958,6 +958,9 @@ MonoBehaviour:
   respawnPosition: {x: 0, y: 0, z: 0}
   levelManager: {fileID: 0}
   stompBox: {fileID: 382105320}
+  knockbackForce: 5
+  knockbackLength: 0.2
+  invincibilityLength: 2
 --- !u!95 &487008314
 Animator:
   serializedVersion: 3
@@ -2714,6 +2717,7 @@ MonoBehaviour:
   heartEmpty: {fileID: 21300734, guid: d10653fb7367eb040ad54df917f2697d, type: 3}
   maxHealth: 6
   healthCount: 0
+  invincible: 0
 --- !u!4 &2091797496
 Transform:
   m_ObjectHideFlags: 0
