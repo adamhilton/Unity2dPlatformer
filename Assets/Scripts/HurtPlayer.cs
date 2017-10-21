@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class HurtPlayer : MonoBehaviour {
 
+	public int damageToGive;
+
 	private LevelManager levelManager;
 
 	// Use this for initialization
@@ -18,8 +20,8 @@ public class HurtPlayer : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D other)
 	{
-		if (other.tag == "Player") {
-			levelManager.Respawn();
+		if (other.CompareTag("Player")) {
+			levelManager.HurtPlayer(damageToGive);
 		}
 	}
 }
