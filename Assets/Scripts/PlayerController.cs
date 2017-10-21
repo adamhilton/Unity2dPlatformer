@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
 	public float knockbackForce;
 	public float knockbackLength;
 	public float invincibilityLength;
+	public AudioSource jumpSound;
+	public AudioSource hurtSound;
 
 	private Rigidbody2D rigidBody;
 	private Animator animator;
@@ -52,6 +54,7 @@ public class PlayerController : MonoBehaviour
 
 			if (Input.GetButtonDown ("Jump") && isGrounded) {
 				rigidBody.velocity = new Vector3 (rigidBody.velocity.x, jumpSpeed, 0f);
+				jumpSound.Play();
 			}
 		}
 
