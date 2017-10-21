@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
 	public bool isGrounded;
 	public Vector3 respawnPosition;
 	public LevelManager levelManager;
+	public GameObject stompBox;
 
 	private Rigidbody2D rigidBody;
 	private Animator animator;
@@ -34,10 +35,10 @@ public class PlayerController : MonoBehaviour
 
 		if (Input.GetAxisRaw ("Horizontal") > 0f) {
 			rigidBody.velocity = new Vector3 (moveSpeed, rigidBody.velocity.y, 0f);
-			transform.localScale = new Vector3(1f,1f,1f);
+			transform.localScale = new Vector3 (1f, 1f, 1f);
 		} else if (Input.GetAxisRaw ("Horizontal") < 0f) {
 			rigidBody.velocity = new Vector3 (-moveSpeed, rigidBody.velocity.y, 0f);
-			transform.localScale = new Vector3(-1f,1f,1f);
+			transform.localScale = new Vector3 (-1f, 1f, 1f);
 		} else {
 			rigidBody.velocity = new Vector3 (0f, rigidBody.velocity.y, 0f);
 		}
@@ -46,8 +47,14 @@ public class PlayerController : MonoBehaviour
 			rigidBody.velocity = new Vector3 (rigidBody.velocity.x, jumpSpeed, 0f);
 		}
 
-		animator.SetFloat("Speed", Mathf.Abs(rigidBody.velocity.x));
-		animator.SetBool("Grounded", isGrounded);
+		animator.SetFloat ("Speed", Mathf.Abs (rigidBody.velocity.x));
+		animator.SetBool ("Grounded", isGrounded);
+
+		if (rigidBody.velocity.y < 0) {
+			stompBox.SetActive (true);
+		} else {
+			stompBox.SetActive (false);
+		}
 	}
 
 	void OnTriggerEnter2D (Collider2D other)
