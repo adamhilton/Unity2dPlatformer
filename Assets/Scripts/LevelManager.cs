@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour {
 	public GameObject deathSplosion;
 	public int coinCount;
 	public Text coinText;
+	public AudioSource coinSound;
 	public Image heart1;
 	public Image heart2;
 	public Image heart3;
@@ -102,6 +103,8 @@ public class LevelManager : MonoBehaviour {
 		coinBonusLifeCount += coinsToAdd;
 
 		UpdateCoinCount();
+
+		coinSound.Play();
 	}
 
 	public void HurtPlayer (int damageToTake)
@@ -124,6 +127,7 @@ public class LevelManager : MonoBehaviour {
 		}
 
 		UpdateHeartMeter();
+		coinSound.Play();
 	}
 
 	public void UpdateHeartMeter ()
@@ -172,6 +176,7 @@ public class LevelManager : MonoBehaviour {
 	{
 		currentLives += livesToAdd;
 		UpdateLives();
+		coinSound.Play();
 	}
 
 	private void UpdateCoinCount ()
