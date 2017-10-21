@@ -145,6 +145,12 @@ public class LevelManager : MonoBehaviour {
 		}
 	}
 
+	public void AddLives (int livesToAdd)
+	{
+		currentLives += livesToAdd;
+		UpdateLives();
+	}
+
 	private void UpdateCoinCount ()
 	{
 		coinText.text = "Coins: " + coinCount;
