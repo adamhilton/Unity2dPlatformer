@@ -105,6 +105,17 @@ public class LevelManager : MonoBehaviour {
 		}
 	}
 
+	public void GiveHealth (int healthToGive)
+	{
+		healthCount += healthToGive;
+
+		if (healthCount > maxHealth) {
+			healthCount = maxHealth;
+		}
+
+		UpdateHeartMeter();
+	}
+
 	public void UpdateHeartMeter ()
 	{
 		switch (healthCount) {
