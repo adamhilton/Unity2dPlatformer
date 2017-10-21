@@ -26,6 +26,7 @@ public class LevelManager : MonoBehaviour {
 
 	private bool respawning;
 	private ResetOnRespawn[] objectsToReset;
+	private int coinBonusLifeCount;
 
 	// Use this for initialization
 	void Start () {
@@ -41,8 +42,14 @@ public class LevelManager : MonoBehaviour {
 	void Update ()
 	{
 		if (healthCount <= 0 && !respawning) {
-			Respawn();
-		}		
+			Respawn ();
+		}	
+
+		if (coinBonusLifeCount >= 100) {
+			currentLives += 1;
+			UpdateLives();
+			coinBonusLifeCount -= 100;
+		}	
 	}
 
 	public void Respawn ()
@@ -76,6 +83,7 @@ public class LevelManager : MonoBehaviour {
 		UpdateHeartMeter ();
 
 		coinCount = 0;
+		coinBonusLifeCount = 0;
 		UpdateCoinCount();
 
 		player.transform.position = player.respawnPosition;
@@ -91,6 +99,7 @@ public class LevelManager : MonoBehaviour {
 	public void AddCoins (int coinsToAdd)
 	{
 		coinCount += coinsToAdd;
+		coinBonusLifeCount += coinsToAdd;
 
 		UpdateCoinCount();
 	}
