@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 
 	public float moveSpeed;
 	public float jumpSpeed;
+	public bool canMove;
 	public Transform groundCheck;
 	public float groundCheckRadius;
 	public LayerMask whatIsGround;
@@ -20,8 +21,8 @@ public class PlayerController : MonoBehaviour
 	public AudioSource jumpSound;
 	public AudioSource hurtSound;
 	public float onPlatformSpeedModifier;
+	public Rigidbody2D rigidBody;
 
-	private Rigidbody2D rigidBody;
 	private Animator animator;
 	private float knockbackCounter;
 	private float invincibilityCounter;
@@ -38,6 +39,8 @@ public class PlayerController : MonoBehaviour
 		levelManager = FindObjectOfType<LevelManager>();
 
 		activeMoveSpeed = moveSpeed;
+
+		canMove = true;
 	}
 	
 	// Update is called once per frame
@@ -45,7 +48,7 @@ public class PlayerController : MonoBehaviour
 	{
 		isGrounded = Physics2D.OverlapCircle (groundCheck.position, groundCheckRadius, whatIsGround);
 
-		if (knockbackCounter <= 0) {
+		if (knockbackCounter <= 0 && canMove) {
 
 			if (onPlatform) {
 				activeMoveSpeed = moveSpeed * onPlatformSpeedModifier;
