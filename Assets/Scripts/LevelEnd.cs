@@ -53,6 +53,9 @@ public class LevelEnd : MonoBehaviour {
 		levelManager.levelMusic.Stop();
 		levelManager.gameOverMusic.Play();
 
+		PlayerPrefs.SetInt("CoinCount", levelManager.coinCount);
+		PlayerPrefs.SetInt("PlayerLives", levelManager.currentLives);
+
 		player.rigidBody.velocity = Vector3.zero;
 
 		yield return new WaitForSeconds(waitToMove);
