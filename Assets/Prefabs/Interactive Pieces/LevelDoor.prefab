@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4270817493469124}
   - component: {fileID: 212256895847284114}
   m_Layer: 0
-  m_Name: Door Bottom
+  m_Name: Door Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 4337807439736590}
   - component: {fileID: 212521525773267964}
   m_Layer: 0
-  m_Name: Door Top
+  m_Name: Door Bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -105,7 +105,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4781726206313528}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4337807439736590
 Transform:
@@ -118,7 +118,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4781726206313528}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4781726206313528
 Transform:
@@ -130,9 +130,9 @@ Transform:
   m_LocalPosition: {x: -1.1676, y: -1.8127, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 224787105818166118}
   - {fileID: 4270817493469124}
   - {fileID: 4337807439736590}
-  - {fileID: 224787105818166118}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -227,6 +227,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelToLoad: Level1
+  unlocked: 0
+  doorBottomOpen: {fileID: 21300274, guid: d10653fb7367eb040ad54df917f2697d, type: 3}
+  doorTopOpen: {fileID: 21300272, guid: d10653fb7367eb040ad54df917f2697d, type: 3}
+  doorBottomClosed: {fileID: 21300334, guid: d10653fb7367eb040ad54df917f2697d, type: 3}
+  doorTopClosed: {fileID: 21300332, guid: d10653fb7367eb040ad54df917f2697d, type: 3}
+  doorBottomRenderer: {fileID: 212521525773267964}
+  doorTopRenderer: {fileID: 212256895847284114}
 --- !u!212 &212256895847284114
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -371,7 +378,7 @@ RectTransform:
   m_Children:
   - {fileID: 224508830200065926}
   m_Father: {fileID: 4781726206313528}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

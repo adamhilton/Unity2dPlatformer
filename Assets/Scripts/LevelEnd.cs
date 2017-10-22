@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelEnd : MonoBehaviour {
 
 	public string levelToLoad;
+	public string levelToUnlock;
 	public float waitToMove;
 	public float waitToLoad;
 	public Sprite flagOpen;
@@ -55,6 +56,8 @@ public class LevelEnd : MonoBehaviour {
 
 		PlayerPrefs.SetInt("CoinCount", levelManager.coinCount);
 		PlayerPrefs.SetInt("PlayerLives", levelManager.currentLives);
+
+		PlayerPrefs.SetInt(levelToUnlock, 1);
 
 		player.rigidBody.velocity = Vector3.zero;
 
