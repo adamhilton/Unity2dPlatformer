@@ -243,7 +243,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 30588117}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -237, y: -112, z: 0}
+  m_LocalPosition: {x: -243, y: -115.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 287394832}
@@ -1034,7 +1034,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 403577879}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 290, y: 163, z: 0}
+  m_LocalPosition: {x: 296, y: 166.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1791739369}
@@ -1468,6 +1468,7 @@ MonoBehaviour:
   invincibilityLength: 2
   jumpSound: {fileID: 1550601545}
   hurtSound: {fileID: 1888296170}
+  onPlatformSpeedModifier: 0.5
 --- !u!95 &487008314
 Animator:
   serializedVersion: 3
@@ -2800,7 +2801,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4738167395317784, guid: fb41c9bea9463b941af2eb97f9a47e19, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 5.13
+      value: 5.34
       objectReference: {fileID: 0}
     - target: {fileID: 4738167395317784, guid: fb41c9bea9463b941af2eb97f9a47e19, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2958,8 +2959,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -740377199
-  m_SortingLayer: -1
+  m_SortingLayerID: 808681729
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 61889b7b2bb2ba34d9267aff2a4e523b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4258,7 +4259,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1791739368}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -189, y: 131, z: 0}
+  m_LocalPosition: {x: -195, y: 134.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 403577883}

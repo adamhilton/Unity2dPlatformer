@@ -19,11 +19,14 @@ public class PlayerController : MonoBehaviour
 	public float invincibilityLength;
 	public AudioSource jumpSound;
 	public AudioSource hurtSound;
+	public float onPlatformSpeedModifier;
 
 	private Rigidbody2D rigidBody;
 	private Animator animator;
 	private float knockbackCounter;
 	private float invincibilityCounter;
+	private bool onPlatform;
+	private float activeMoveSpeed;
 
 	// Use this for initialization
 	void Start ()
@@ -33,6 +36,8 @@ public class PlayerController : MonoBehaviour
 
 		respawnPosition = transform.position;
 		levelManager = FindObjectOfType<LevelManager>();
+
+		activeMoveSpeed = moveSpeed;
 	}
 	
 	// Update is called once per frame
@@ -42,11 +47,17 @@ public class PlayerController : MonoBehaviour
 
 		if (knockbackCounter <= 0) {
 
+			if (onPlatform) {
+				activeMoveSpeed = moveSpeed * onPlatformSpeedModifier;
+			} else {
+				activeMoveSpeed = moveSpeed;
+			}
+
 			if (Input.GetAxisRaw ("Horizontal") > 0f) {
-				rigidBody.velocity = new Vector3 (moveSpeed, rigidBody.velocity.y, 0f);
+				rigidBody.velocity = new Vector3 (activeMoveSpeed, rigidBody.velocity.y, 0f);
 				transform.localScale = new Vector3 (1f, 1f, 1f);
 			} else if (Input.GetAxisRaw ("Horizontal") < 0f) {
-				rigidBody.velocity = new Vector3 (-moveSpeed, rigidBody.velocity.y, 0f);
+				rigidBody.velocity = new Vector3 (-activeMoveSpeed, rigidBody.velocity.y, 0f);
 				transform.localScale = new Vector3 (-1f, 1f, 1f);
 			} else {
 				rigidBody.velocity = new Vector3 (0f, rigidBody.velocity.y, 0f);
@@ -107,6 +118,7 @@ public class PlayerController : MonoBehaviour
 	{
 		if (other.gameObject.CompareTag("MovingPlatform")) {
 			transform.parent = other.transform;
+			onPlatform = true;
 		}
 	}
 
@@ -114,6 +126,7 @@ public class PlayerController : MonoBehaviour
 	{
 		if (other.gameObject.CompareTag("MovingPlatform")) {
 			transform.parent = null;
+			onPlatform = false;
 		}
 	}
 }
